@@ -16,7 +16,8 @@ This is a demo of setting up an Amazon Web Service (AWS) S3 bucket and uploading
 
 * AWS is set to the User ARN. Also the Resource is set to the Bucket ARN.
 
-```json {
+```json 
+{
     "Version": "2012-10-17",
     "Id": "Policy1488494182833",
     "Statement": [
@@ -36,7 +37,7 @@ This is a demo of setting up an Amazon Web Service (AWS) S3 bucket and uploading
             "Resource": " "
         }
     ]
- } 
+} 
 ```
 
 * Clicked the CORS configuration and add the following policy
