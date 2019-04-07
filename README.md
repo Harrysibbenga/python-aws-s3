@@ -8,7 +8,7 @@ This is a demo of setting up an Amazon Web Service (AWS) S3 bucket and uploading
 
 * Once that was finished I created a user through IAM dashboard in Services.
 
-* Copyed the User ARN
+* Copied the User ARN
 
 * Reopened the S3 dashboard
 
@@ -16,7 +16,7 @@ This is a demo of setting up an Amazon Web Service (AWS) S3 bucket and uploading
 
 * AWS is set to the User ARN. Also the Resource is set to the Bucket ARN.
 
-* {
+```json {
     "Version": "2012-10-17",
     "Id": "Policy1488494182833",
     "Statement": [
@@ -36,25 +36,28 @@ This is a demo of setting up an Amazon Web Service (AWS) S3 bucket and uploading
             "Resource": " "
         }
     ]
- }
+ } 
+```
 
 * Clicked the CORS configuration and add the following policy
 
-* <?xml version="1.0" encoding="UTF-8"?>
-    <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
-      <CORSRule>
-        <AllowedOrigin>*</AllowedOrigin>
-        <AllowedMethod>GET</AllowedMethod>
-        <AllowedMethod>POST</AllowedMethod>
-        <AllowedMethod>PUT</AllowedMethod>
-        <MaxAgeSeconds>3000</MaxAgeSeconds>
-        <AllowedHeader>Authorization</AllowedHeader>
-      </CORSRule>
-    </CORSConfiguration>
-
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+  <CORSRule>
+    <AllowedOrigin>*</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>POST</AllowedMethod>
+    <AllowedMethod>PUT</AllowedMethod>
+    <MaxAgeSeconds>3000</MaxAgeSeconds>
+    <AllowedHeader>Authorization</AllowedHeader>
+  </CORSRule>
+</CORSConfiguration>
+```
 * Reopened the IAM dashboard to view the your new user to add a New inline policy.
 
-* {
+```json 
+{
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -69,5 +72,5 @@ This is a demo of setting up an Amazon Web Service (AWS) S3 bucket and uploading
             ]
         }
     ]
- }
-
+}
+```
