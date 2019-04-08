@@ -9,7 +9,7 @@ BUCKET_NAME = 'uploading-from-local-dir'
 path = '/home/ubuntu/workspace/files'
 print(os.listdir(path))
 for filename in os.listdir(path):
-    data = open('files/'+ filename, 'rb')
+    data = open(path + '/' + filename, 'rb')
     s3 = boto3.resource(
         's3',
         aws_access_key_id=ACCESS_KEY_ID,
@@ -17,7 +17,7 @@ for filename in os.listdir(path):
         config=Config(signature_version='s3v4')
     )
     s3.Bucket(BUCKET_NAME).put_object(Key=filename, Body=data)
-    os.remove('files/'+ filename) 
+    os.remove(path + '/' + filename) 
     print("File Removed!")
 
 print ("Done")
